@@ -1,0 +1,29 @@
+name: MeatCooker
+version: ${project.version}
+main: xyz.thegamecube.meatcooker.MeatCooker
+authors: [SirFaizdat]
+description: Automatically cooks the meat of animals when they are killed.
+website: http://thegamecube.xyz
+
+commands:
+  meatcooker:
+    description: Version information for MeatCooker.
+    usage: /<command>
+    permission: meatcooker.version
+
+permissions:
+  meatcooker.meat:
+    description: Automatically cook meat upon killing an animal.
+    default: op
+  meatcooker.fish:
+    description: Automatically cook fish upon fishing them.
+    default: op
+  meatcooker.all:
+    description: Automatically cooks meat and fish upon killing/fishing them.
+    default: op
+    children:
+      meatcooker.meat: true
+      meatcooker.fish: true
+  meatcooker.version:
+    description: Access to /meatcooker.
+    default: true
